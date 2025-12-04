@@ -1,4 +1,4 @@
-<h1 align="center">Real-time audio Application ✨</h1>
+<h1 align="center">Real-time Audio Streaming Application ✨</h1>
 
 About This project:
 
