@@ -1,4 +1,4 @@
-<h1 align="center">Realtime Spotify Application ✨</h1>
+<h1 align="center">Real-time audio Application ✨</h1>
 
 About This project:
 
