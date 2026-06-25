@@ -2,12 +2,24 @@ import { Server } from "socket.io";
 import { Message } from "../models/message.model.js";
 
 export const initializeSocket = (server) => {
-  const io = new Server(server, {
-    cors: {
-      origin: "http://localhost:3000",
-      credentials: true,
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  process.env.CLIENT_URL,
+].filter(Boolean);
+
+const io = new Server(server, {
+  cors: {
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Socket.IO CORS Error"));
+      }
     },
-  });
+    credentials: true,
+  },
+});
 
   const userSockets = new Map(); // { userId: socketId}
   const userActivities = new Map(); // {userId: activity}
