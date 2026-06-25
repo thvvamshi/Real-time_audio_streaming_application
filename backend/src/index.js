@@ -68,6 +68,13 @@ cron.schedule("0 * * * *", () => {
 	}
 });
 
+app.get("/health", (req, res) => {
+	res.status(200).json({
+		status: "OK",
+		message: "Server is running",
+	});
+});
+
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
