@@ -1,100 +1,25 @@
 # 🎵 Real-Time Audio Streaming Platform
 
-<p align="center">
-A full-stack Spotify-inspired music streaming platform featuring real-time chat, live listening activity, secure authentication, media management, and an admin dashboard.
-</p>
+A full-stack Spotify-inspired music streaming application with real-time chat, online presence, admin dashboard, and secure authentication.
 
-<p align="center">
+## 🚀 Live Demo
 
-![React](https://img.shields.io/badge/React-19-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Express-green)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
-![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-black)
-![Clerk](https://img.shields.io/badge/Authentication-Clerk-purple)
-![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-blue)
-
-</p>
-
-### 🚀 Live Demo
-
-Frontend : https://real-time-audio-streaming-application-koa2.onrender.com
-
-Backend API : https://real-time-audio-streaming-application.onrender.com
-
----
-
-# 📖 Overview
-
-This project is a modern music streaming application inspired by Spotify that combines music playback, social interaction, and real-time communication into one seamless platform.
-
-Users can stream songs, browse albums, chat with other listeners, and see what friends are currently listening to. Administrators can manage songs and albums through a dedicated dashboard while media assets are securely stored on Cloudinary.
-
-The application demonstrates modern full-stack engineering practices including secure authentication, REST APIs, WebSocket communication, cloud storage integration, and scalable application architecture.
+**Application:** https://real-time-audio-streaming-application.onrender.com
 
 ---
 
 # ✨ Features
 
-## 🎵 Music Streaming
-
-* Stream music instantly
-* Play / Pause controls
-* Next & Previous song navigation
-* Volume control
-* Queue management
-* Album browsing
-* Responsive music player
-
----
-
-## 💬 Real-Time Chat
-
-* One-to-one messaging
-* Instant message delivery using Socket.IO
-* Previous conversation history
-* Online/Offline user status
-* Live connection updates
-
----
-
-## 👀 Live Listening Activity
-
-* Display what users are currently listening to
-* Live activity updates
-* User presence tracking
-* Idle status detection
-
----
-
-## 👨‍💼 Admin Dashboard
-
-* Upload songs
-* Upload album artwork
-* Create albums
-* Delete songs
-* Delete albums
-* Cloudinary media uploads
-* Music library management
-
----
-
-## 📊 Analytics Dashboard
-
-* Total Songs
-* Total Albums
-* Total Users
-* Platform statistics
-
----
-
-## 🔐 Authentication
-
-* Clerk Authentication
-* JWT-based API authorization
-* Protected routes
-* Admin authorization
-* Session management
+- 🎵 Music Streaming
+- ❤️ Featured, Trending & Made For You playlists
+- 💬 Real-time chat using Socket.IO
+- 🟢 Online user status
+- ✍️ User activity indicators
+- 🔐 Authentication using Clerk
+- 👑 Admin Dashboard
+- ☁️ Cloudinary image & audio uploads
+- 📊 Dashboard statistics
+- 📱 Fully responsive UI
 
 ---
 
@@ -102,305 +27,255 @@ The application demonstrates modern full-stack engineering practices including s
 
 ## Frontend
 
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-* Zustand
-* Axios
-* React Router
-* Socket.IO Client
-* Radix UI
-* Lucide Icons
-
----
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Zustand
+- Axios
+- Clerk
+- Socket.IO Client
 
 ## Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* Socket.IO
-* Express File Upload
-* Node Cron
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Socket.IO
+- Cloudinary
+- Clerk
+- Express File Upload
+- Node Cron
 
 ---
 
-## Cloud Services
+# Project Structure
 
-* Cloudinary
-* Clerk Authentication
-
----
-
-# 🏗 Architecture
-
-```text
-                    React + TypeScript
-                           │
-                           ▼
-                  REST API + Socket.IO
-                           │
-                           ▼
-                    Node.js + Express
-        ┌──────────────────────────────────┐
-        │ Authentication (Clerk)           │
-        │ Song Management                  │
-        │ Album Management                 │
-        │ Chat Service                     │
-        │ Analytics Service                │
-        │ User Presence Service            │
-        └──────────────────────────────────┘
-                   │               │
-                   ▼               ▼
-              MongoDB         Cloudinary
 ```
-
----
-
-# 📁 Project Structure
-
-```text
-real-time-audio-streaming-platform
-
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── stores
-│   │   ├── providers
-│   │   ├── hooks
-│   │   └── lib
-│   └── package.json
-│
-├── backend
-│   ├── src
-│   │   ├── controllers
-│   │   ├── middleware
-│   │   ├── models
-│   │   ├── routes
-│   │   ├── lib
-│   │   └── socket
-│   └── package.json
-│
+.
+├── backend/
+├── frontend/
+├── package.json
 └── README.md
 ```
 
 ---
 
-# ⚙ Environment Variables
-
-## Backend (.env)
-
-```env
-PORT=
-
-MONGODB_URI=
-
-NODE_ENV=
-
-CLIENT_URL=
-
-ADMIN_EMAIL=
-
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
-CLOUDINARY_CLOUD_NAME=
-
-CLERK_SECRET_KEY=
-CLERK_PUBLISHABLE_KEY=
-```
-
----
-
-## Frontend (.env)
-
-```env
-VITE_CLERK_PUBLISHABLE_KEY=
-```
-
----
-
-# 🚀 Installation
+# Local Setup
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/real-time-audio-streaming-platform.git
+git clone https://github.com/thvvamshi/Real-time_audio_streaming_application.git
 
-cd real-time-audio-streaming-platform
+cd Real-time_audio_streaming_application
+```
+
+## Install Dependencies
+
+```bash
+npm install
+
+cd backend
+npm install
+
+cd ../frontend
+npm install
 ```
 
 ---
 
-## Backend
+# Backend Environment Variables
+
+Create:
+
+```
+backend/.env
+```
+
+```env
+PORT=5000
+
+NODE_ENV=development
+
+MONGODB_URI=your_mongodb_uri
+
+ADMIN_EMAIL=your_admin_email
+
+CLERK_SECRET_KEY=your_clerk_secret_key
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+CLIENT_URL=http://localhost:5173
+```
+
+---
+
+# Frontend Environment Variables
+
+Create:
+
+```
+frontend/.env
+```
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+VITE_API_URL=http://localhost:5000
+```
+
+---
+
+# Run Locally
+
+Backend
 
 ```bash
 cd backend
-
-npm install
-
 npm run dev
 ```
 
----
-
-## Frontend
+Frontend
 
 ```bash
 cd frontend
-
-npm install
-
 npm run dev
 ```
 
 ---
 
-# 📡 REST API
+# Production Deployment (Render)
 
-### Authentication
+This project is deployed as **a single Render Web Service**, where the Express backend serves the built React application.
 
-```
-GET /api/auth/callback
-```
+## Why Single Deployment?
 
-### Songs
+Instead of deploying the frontend and backend separately, the React application is built during deployment and served directly from the Express server. This avoids CORS issues, simplifies Socket.IO communication, and ensures Clerk authentication works on the same origin. :contentReference[oaicite:0]{index=0}
 
-```
-GET    /api/songs
-POST   /api/admin/songs
-DELETE /api/admin/songs/:id
-```
+---
 
-### Albums
+## Root package.json
 
-```
-GET    /api/albums
-POST   /api/admin/albums
-DELETE /api/admin/albums/:id
-```
-
-### Users
-
-```
-GET /api/users
-GET /api/users/messages/:userId
-```
-
-### Statistics
-
-```
-GET /api/stats
+```json
+{
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm start --prefix backend"
+  }
+}
 ```
 
 ---
 
-# 🔄 Real-Time Events
+## Backend Configuration
 
-### Socket.IO
+Express serves the React production build:
 
-```
-user_connected
+```js
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-user_disconnected
-
-send_message
-
-receive_message
-
-message_sent
-
-update_activity
-
-activity_updated
-
-users_online
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "../frontend/dist/index.html")
+  );
+});
 ```
 
 ---
 
-# 🧠 Engineering Concepts
+## Axios Configuration
 
-This project demonstrates:
-
-* Full Stack Development
-* REST API Design
-* Real-Time Communication
-* WebSocket Architecture
-* Authentication & Authorization
-* State Management with Zustand
-* Cloud Storage Integration
-* Media Upload Pipelines
-* MongoDB Data Modeling
-* File Upload Handling
-* Scalable Backend Architecture
-* Client-Server Communication
-
----
-
-# 📸 Screenshots
-
-Add screenshots here after deployment.
-
-```
-Home Page
-
-Music Player
-
-Chat
-
-Admin Dashboard
-
-Analytics
+```ts
+const API_URL =
+  import.meta.env.MODE === "development"
+    ? "http://localhost:5000/api"
+    : "/api";
 ```
 
 ---
 
-# 🚀 Future Improvements
+## Socket.IO Configuration
 
-* Playlist creation
-* Like & favorite songs
-* Search functionality
-* Music recommendations
-* User profiles
-* Follow system
-* Collaborative listening rooms
-* Notifications
-* Dark/Light themes
-* Mobile application
-* Premium subscriptions
+```ts
+const socket = io("/", {
+  autoConnect: false,
+  withCredentials: true,
+});
+```
 
 ---
 
-# 📚 Learning Outcomes
+## Render Configuration
 
-While building this project I gained practical experience with:
-
-* Building scalable MERN applications
-* Socket.IO real-time communication
-* Clerk authentication
-* Cloudinary media uploads
-* MongoDB schema design
-* Zustand state management
-* Secure REST API development
-* Production-ready application architecture
+| Setting | Value |
+|----------|-------|
+| Environment | Node |
+| Branch | master |
+| Root Directory | *(leave blank)* |
+| Build Command | `npm run build` |
+| Start Command | `npm start` |
+| Auto Deploy | Enabled |
 
 ---
 
-# 📄 License
+## Production Environment Variables
 
-MIT License
+```env
+PORT=10000
+
+NODE_ENV=production
+
+MONGODB_URI=your_mongodb_uri
+
+ADMIN_EMAIL=your_admin_email
+
+CLERK_SECRET_KEY=your_clerk_secret_key
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+> No `VITE_API_URL` or `CLIENT_URL` is required because the frontend and backend are served from the same domain.
 
 ---
 
-# 👨‍💻 Author
+# Deployment Workflow
 
-**Boda Vamshi Kumar**
+1. Push code to GitHub.
+2. Render automatically pulls the latest commit.
+3. Backend dependencies are installed.
+4. Frontend dependencies are installed.
+5. React application is built.
+6. Express serves the generated `frontend/dist` files.
+7. Socket.IO, REST APIs, and React are available from the same Render URL. :contentReference[oaicite:1]{index=1}
 
-Full Stack Developer | Backend Developer | MERN Stack Enthusiast
+---
+
+# Future Improvements
+
+- Music queue
+- Playlist sharing
+- Like songs
+- Search functionality
+- Notifications
+- User profiles
+- Dark/Light theme
+- Recently played history
+
+---
+
+# Author
+
+**Vamshi Kumar**
 
 GitHub: https://github.com/thvvamshi
 
-LinkedIn: https://linkedin.com/in/bodavamshikumar
+LinkedIn: https://www.linkedin.com/in/bodavamshikumar/
