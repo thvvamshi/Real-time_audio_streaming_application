@@ -16,6 +16,12 @@ A full-stack Spotify-inspired music streaming platform featuring real-time chat,
 
 </p>
 
+### 🚀 Live Demo
+
+Frontend : https://real-time-audio-streaming-application-koa2.onrender.com
+
+Backend API : https://real-time-audio-streaming-application.onrender.com
+
 ---
 
 # 📖 Overview
