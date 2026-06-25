@@ -1,141 +1,181 @@
-<h1 align="center">🎵 Real-Time Audio Streaming Platform</h1>
+# 🎵 Real-Time Audio Streaming Platform
 
 <p align="center">
-A full-stack music streaming platform that combines music playback, social interaction, and real-time user activity into a modern listening experience.
+A full-stack Spotify-inspired music streaming platform featuring real-time chat, live listening activity, secure authentication, media management, and an admin dashboard.
+</p>
+
+<p align="center">
+
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-black)
+![Clerk](https://img.shields.io/badge/Authentication-Clerk-purple)
+![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-blue)
+
 </p>
 
 ---
 
-## About The Project
+# 📖 Overview
 
-I built this project to explore how modern streaming platforms combine media delivery, real-time communication, user presence, and content management into a seamless experience.
+This project is a modern music streaming application inspired by Spotify that combines music playback, social interaction, and real-time communication into one seamless platform.
 
-The platform allows users to listen to music, discover albums, interact with other listeners in real time, and view live listening activity. An integrated admin dashboard makes it easy to manage music content, while analytics provide insights into platform usage.
+Users can stream songs, browse albums, chat with other listeners, and see what friends are currently listening to. Administrators can manage songs and albums through a dedicated dashboard while media assets are securely stored on Cloudinary.
 
-The project focuses heavily on real-time features using Socket.IO and demonstrates full-stack application development with authentication, media management, and scalable architecture patterns.
+The application demonstrates modern full-stack engineering practices including secure authentication, REST APIs, WebSocket communication, cloud storage integration, and scalable application architecture.
 
 ---
 
-## Features
+# ✨ Features
 
-### 🎵 Music Streaming
+## 🎵 Music Streaming
 
-* Stream songs in real time
-* Play, pause, next, and previous controls
-* Volume adjustment slider
-* Album browsing experience
+* Stream music instantly
+* Play / Pause controls
+* Next & Previous song navigation
+* Volume control
 * Queue management
-* Responsive audio player
+* Album browsing
+* Responsive music player
 
-### 💬 Real-Time Communication
+---
 
-* Built-in chat system
-* Live user presence detection
-* Online and offline status tracking
-* Instant messaging using Socket.IO
+## 💬 Real-Time Chat
 
-### 👀 Live Listening Activity
+* One-to-one messaging
+* Instant message delivery using Socket.IO
+* Previous conversation history
+* Online/Offline user status
+* Live connection updates
 
-* View what other users are listening to
-* Real-time listening updates
-* Shared listening experience
+---
 
-### 🎧 Admin Dashboard
+## 👀 Live Listening Activity
 
-* Create albums
+* Display what users are currently listening to
+* Live activity updates
+* User presence tracking
+* Idle status detection
+
+---
+
+## 👨‍💼 Admin Dashboard
+
 * Upload songs
-* Manage music library
-* Organize content efficiently
+* Upload album artwork
+* Create albums
+* Delete songs
+* Delete albums
+* Cloudinary media uploads
+* Music library management
 
-### 📊 Analytics
+---
 
-* Platform usage insights
-* Album statistics
-* Song analytics
-* User activity monitoring
+## 📊 Analytics Dashboard
 
-### 🔐 Authentication
+* Total Songs
+* Total Albums
+* Total Users
+* Platform statistics
 
-* Secure user authentication
-* Clerk integration
+---
+
+## 🔐 Authentication
+
+* Clerk Authentication
+* JWT-based API authorization
 * Protected routes
+* Admin authorization
 * Session management
 
 ---
 
-## Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
 * React
-* React Router
+* TypeScript
+* Vite
 * Tailwind CSS
+* Zustand
 * Axios
+* React Router
 * Socket.IO Client
+* Radix UI
+* Lucide Icons
 
-### Backend
+---
+
+## Backend
 
 * Node.js
 * Express.js
 * MongoDB
 * Mongoose
 * Socket.IO
+* Express File Upload
+* Node Cron
 
-### Cloud Services
+---
+
+## Cloud Services
 
 * Cloudinary
 * Clerk Authentication
 
 ---
 
-## Architecture
+# 🏗 Architecture
 
-```text id="g7k25q"
-Client
-   │
-   ▼
-React Frontend
-   │
-   ▼
-Socket.IO + REST APIs
-   │
-   ▼
-Node.js / Express
-   │
-   ├── Authentication (Clerk)
-   ├── Music Management
-   ├── Chat Service
-   ├── Analytics Service
-   └── User Presence Service
-   │
-   ▼
-MongoDB
-   │
-   ▼
-Cloudinary Media Storage
+```text
+                    React + TypeScript
+                           │
+                           ▼
+                  REST API + Socket.IO
+                           │
+                           ▼
+                    Node.js + Express
+        ┌──────────────────────────────────┐
+        │ Authentication (Clerk)           │
+        │ Song Management                  │
+        │ Album Management                 │
+        │ Chat Service                     │
+        │ Analytics Service                │
+        │ User Presence Service            │
+        └──────────────────────────────────┘
+                   │               │
+                   ▼               ▼
+              MongoDB         Cloudinary
 ```
 
 ---
 
-## Project Structure
+# 📁 Project Structure
 
-```text id="6gw8k7"
-project-root
-│
+```text
+real-time-audio-streaming-platform
+
 ├── frontend
 │   ├── src
-│   ├── public
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── stores
+│   │   ├── providers
+│   │   ├── hooks
+│   │   └── lib
 │   └── package.json
 │
 ├── backend
 │   ├── src
 │   │   ├── controllers
-│   │   ├── routes
-│   │   ├── models
 │   │   ├── middleware
-│   │   ├── services
-│   │   └── lib
-│   │
+│   │   ├── models
+│   │   ├── routes
+│   │   ├── lib
+│   │   └── socket
 │   └── package.json
 │
 └── README.md
@@ -143,48 +183,54 @@ project-root
 
 ---
 
-## Setup .env File in Backend
+# ⚙ Environment Variables
 
-```env id="75bjlwm"
+## Backend (.env)
+
+```env
 PORT=
 
 MONGODB_URI=
 
-ADMIN_EMAIL=
-
 NODE_ENV=
+
+CLIENT_URL=
+
+ADMIN_EMAIL=
 
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 CLOUDINARY_CLOUD_NAME=
 
-CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
+CLERK_PUBLISHABLE_KEY=
 ```
 
 ---
 
-## Setup .env File in Frontend
+## Frontend (.env)
 
-```env id="4e8n7d"
+```env
 VITE_CLERK_PUBLISHABLE_KEY=
 ```
 
 ---
 
-## Installation
+# 🚀 Installation
 
-### Clone Repository
+## Clone Repository
 
-```bash id="h31qjh"
-git clone <repository-url>
+```bash
+git clone https://github.com/your-username/real-time-audio-streaming-platform.git
 
 cd real-time-audio-streaming-platform
 ```
 
-### Backend Setup
+---
 
-```bash id="jlwmj6"
+## Backend
+
+```bash
 cd backend
 
 npm install
@@ -192,9 +238,11 @@ npm install
 npm run dev
 ```
 
-### Frontend Setup
+---
 
-```bash id="aj0vxg"
+## Frontend
+
+```bash
 cd frontend
 
 npm install
@@ -204,58 +252,149 @@ npm run dev
 
 ---
 
-## Core Engineering Concepts
+# 📡 REST API
 
-This project demonstrates experience with:
+### Authentication
 
-* Full-Stack Application Development
+```
+GET /api/auth/callback
+```
+
+### Songs
+
+```
+GET    /api/songs
+POST   /api/admin/songs
+DELETE /api/admin/songs/:id
+```
+
+### Albums
+
+```
+GET    /api/albums
+POST   /api/admin/albums
+DELETE /api/admin/albums/:id
+```
+
+### Users
+
+```
+GET /api/users
+GET /api/users/messages/:userId
+```
+
+### Statistics
+
+```
+GET /api/stats
+```
+
+---
+
+# 🔄 Real-Time Events
+
+### Socket.IO
+
+```
+user_connected
+
+user_disconnected
+
+send_message
+
+receive_message
+
+message_sent
+
+update_activity
+
+activity_updated
+
+users_online
+```
+
+---
+
+# 🧠 Engineering Concepts
+
+This project demonstrates:
+
+* Full Stack Development
+* REST API Design
 * Real-Time Communication
 * WebSocket Architecture
-* Media Management Systems
 * Authentication & Authorization
+* State Management with Zustand
 * Cloud Storage Integration
-* Analytics Systems
-* State Management
-* REST API Design
+* Media Upload Pipelines
+* MongoDB Data Modeling
+* File Upload Handling
 * Scalable Backend Architecture
+* Client-Server Communication
 
 ---
 
-## Future Improvements
+# 📸 Screenshots
 
-* Playlist Creation
-* Music Recommendations
-* Social Following System
-* Collaborative Listening Rooms
-* Notification System
-* Mobile Application
-* Premium Subscription Features
-* Personalized Music Discovery
+Add screenshots here after deployment.
 
----
+```
+Home Page
 
-## Learning Outcomes
+Music Player
 
-Through this project I gained hands-on experience building:
+Chat
 
-* Real-time systems using Socket.IO
-* Secure authentication workflows
-* Media streaming applications
-* Cloudinary-based file management
-* Analytics dashboards
-* Modern React applications
-* Scalable Node.js backends
+Admin Dashboard
+
+Analytics
+```
 
 ---
 
-## License
+# 🚀 Future Improvements
+
+* Playlist creation
+* Like & favorite songs
+* Search functionality
+* Music recommendations
+* User profiles
+* Follow system
+* Collaborative listening rooms
+* Notifications
+* Dark/Light themes
+* Mobile application
+* Premium subscriptions
+
+---
+
+# 📚 Learning Outcomes
+
+While building this project I gained practical experience with:
+
+* Building scalable MERN applications
+* Socket.IO real-time communication
+* Clerk authentication
+* Cloudinary media uploads
+* MongoDB schema design
+* Zustand state management
+* Secure REST API development
+* Production-ready application architecture
+
+---
+
+# 📄 License
 
 MIT License
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-**Vamshi Kumar**
+**Boda Vamshi Kumar**
 
-Software Developer | Full-Stack Engineer | Backend & System Design Enthusiast
+Full Stack Developer | Backend Developer | MERN Stack Enthusiast
+
+GitHub: https://github.com/thvvamshi
+
+LinkedIn: https://linkedin.com/in/bodavamshikumar
