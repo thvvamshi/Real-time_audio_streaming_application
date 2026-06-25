@@ -11,7 +11,7 @@ const updateApiToken = (token: string | null) => {
 };
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-	const { getToken, userId } = useAuth();
+	const { getToken, userId, isLoaded, isSignedIn } = useAuth();
 	const [loading, setLoading] = useState(true);
 	const { checkAdminStatus } = useAuthStore();
 	const { initSocket, disconnectSocket } = useChatStore();

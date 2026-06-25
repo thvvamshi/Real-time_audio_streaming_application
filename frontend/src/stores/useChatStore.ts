@@ -84,12 +84,14 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			});
 
 			socket.on("receive_message", (message: Message) => {
+				console.log("receive_message", message._id);
 				set((state) => ({
 					messages: [...state.messages, message],
 				}));
 			});
 
 			socket.on("message_sent", (message: Message) => {
+				console.log("message_sent", message._id);
 				set((state) => ({
 					messages: [...state.messages, message],
 				}));

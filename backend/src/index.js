@@ -27,9 +27,14 @@ const PORT = process.env.PORT;
 const httpServer = createServer(app);
 initializeSocket(httpServer);
 
+const allowedOrigins = [
+	"http://localhost:3000",
+	process.env.CLIENT_URL,
+];
+
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: allowedOrigins,
 		credentials: true,
 	})
 );
